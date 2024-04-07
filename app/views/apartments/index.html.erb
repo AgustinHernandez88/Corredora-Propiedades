@@ -1,0 +1,24 @@
+<!-- app/views/apartments/index.html.erb -->
+
+<h1>Lista de Departamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Número</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @apartments.each do |apartment| %>
+      <tr>
+        <td><%= apartment.number %></td>
+        <td>
+          <%= link_to 'Ver Detalles', building_apartment_path(@building, apartment) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Nuevo Departamento', new_building_apartment_path(@building) %>

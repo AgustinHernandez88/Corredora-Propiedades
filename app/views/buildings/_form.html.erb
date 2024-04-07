@@ -1,0 +1,22 @@
+<!-- app/views/buildings/_form.html.erb -->
+
+<%= form_with(model: @building, url: buildings_path, method: :post) do |form| %>
+  <div>
+    <%= form.label :name, 'Nombre' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :address, 'Dirección' %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :city, 'Ciudad' %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.submit 'Guardar' %>
+  </div>
+<% end %>

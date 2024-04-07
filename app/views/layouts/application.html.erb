@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tu Aplicación</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <!-- Agregar  -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav>
+    <!-- Aquí -->
+    <% if user_signed_in? %>
+      <p>Bienvenido, <%= current_user.nombre %> <%= current_user.apellido %></p>
+    <% end %>
+  </nav>
+
+  <!-- Contenido principal de la página -->
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <!-- Pie de página -->
+  <footer>
+    <!-- Agrega  -->
+  </footer>
+
+  <!-- Scripts JavaScript -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+</html>

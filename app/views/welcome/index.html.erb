@@ -1,0 +1,17 @@
+<!-- app/views/welcome/index.html.erb -->
+
+<h1>Bienvenido a la Corredora de Propiedades</h1>
+
+<h2>Edificios</h2>
+<ul>
+  <% @buildings.each do |building| %>
+    <li><%= building.name %> - <%= building.address %> - <%= building.city %></li>
+  <% end %>
+</ul>
+
+<h2>Departamentos</h2>
+<ul>
+  <% @apartments.each do |apartment| %>
+    <li>Edificio: <%= apartment.building.name %> - Número: <%= apartment.number %></li>
+  <% end %>
+</ul>

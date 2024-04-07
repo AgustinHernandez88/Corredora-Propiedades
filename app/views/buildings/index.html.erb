@@ -1,0 +1,28 @@
+<!-- app/views/buildings/index.html.erb -->
+
+<h1>Lista de Edificios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Ciudad</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @buildings.each do |building| %>
+      <tr>
+        <td><%= building.name %></td>
+        <td><%= building.address %></td>
+        <td><%= building.city %></td>
+        <td>
+          <%= link_to 'Ver Detalles', building_path(building) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Nuevo Edificio', new_building_path %>

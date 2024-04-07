@@ -1,0 +1,12 @@
+<!-- app/views/apartments/_form.html.erb -->
+
+<%= form_with(model: [@building, @apartment], url: building_apartments_path(@building), method: :post) do |form| %>
+  <div>
+    <%= form.label :number, 'Número' %>
+    <%= form.text_field :number %>
+  </div>
+
+  <div>
+    <%= form.submit 'Guardar' %>
+  </div>
+<% end %>
